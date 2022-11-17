@@ -1,5 +1,6 @@
 // import katie from '../assets/images/katie-zaferes.png';
-import star from '../../public/images/star.png';
+// import star from '../../images/star.png';
+import star from '../../public/images/star.png'
 
 export default function Card(props) {
     let badgeText;
@@ -11,7 +12,8 @@ export default function Card(props) {
     return (
         <div className='card'>
             {badgeText && <div className="card--badge">{badgeText}</div>}
-            <img src={`../../public/images/${props.card.coverImg}`} alt="" className='card--image'/>
+            {/* <img src={require(`../../public/images/${props.card.coverImg}.png`)} alt="" className='card--image'/> */}
+            <img src={props.card.coverImg} alt="" className='card--image'/>
             <div className='card--stats'>
                 <img src={star} alt="" className='card--star'/>
                     <span>{props.card.stats.rating}</span>
