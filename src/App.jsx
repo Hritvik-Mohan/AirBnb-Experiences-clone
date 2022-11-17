@@ -1,9 +1,33 @@
-import './App.css'
+import Navbar from "./components/Navbar";
+import Hero from './components/Hero'
+import Card from './components/Card'
+import data from './data'
 
-function App() {
+export default function App() {
+  const cardElement = data.map(card => {
+    return <Card
+      key={card.id}
+      card={card}
+      // {...card}
+  />
+  })
   return (
-    <h1 className='app-heading'>AirBnb Experiences Clone</h1>
+    <div>
+      <Navbar />
+      <Hero />
+      <section className="cards-list">
+        {cardElement}
+      </section>
+    </div>
   )
 }
 
-export default App
+
+
+// img={card.coverImg}
+// rating={card.stats.rating}
+// reviewCount={card.stats.reviewCount}
+// location={card.location}
+// title={card.title}
+// price={card.price}
+// openSpots={card.openSpots}
