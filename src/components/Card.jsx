@@ -12,8 +12,9 @@ export default function Card(props) {
     return (
         <div className='card'>
             {badgeText && <div className="card--badge">{badgeText}</div>}
-            {/* <img src={require(`../../public/images/${props.card.coverImg}.png`)} alt="" className='card--image'/> */}
-            <img src={props.card.coverImg} alt="" className='card--image'/>
+            <img src={`./images/${props.card.coverImg}`} alt="" className='card--image'/>
+            // path should be ./images not the actual path like ../../public/images/./
+            {/* <img src={props.card.coverImg} alt="" className='card--image'/> */}
             <div className='card--stats'>
                 <img src={star} alt="" className='card--star'/>
                     <span>{props.card.stats.rating}</span>
